@@ -25,6 +25,7 @@ def details(request, slug):
         form = CourseContact(request.POST)
         if form.is_valid():
             context['is_valid'] = True
+            form.send_mail(course)
             form = CourseContact()
     else:
         form = CourseContact()
